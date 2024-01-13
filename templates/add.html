@@ -1,0 +1,7 @@
+<body style="background-color: aqua;">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" name="save">
+    </form>
+</body>

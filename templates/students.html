@@ -1,0 +1,44 @@
+<body style="background-color: aquamarine;">
+    <h3>Click here to add a new student :<a href="{% url 'add' %}" style="text-decoration: none; background-color: rgb(94, 155, 97); color: antiquewhite;">Add</a></h3>
+    
+
+<table border="5" style="background-color: antiquewhite; width: 90%;" align="center">
+    <thead style="font-size: larger;">
+        <tr>
+        <td >Name</td>
+        <td>Age</td>
+        <td>grade</td>
+        <td>sjubject</td>
+        <td>Attendance</td>
+        </tr>
+    </thead>
+        {% for student in students%}
+    <tbody>
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.grade}}</td>
+            <td>{{student.subjects}}</td>
+            <td>{{student.attendance}}</td>
+            <td style="background-color: rgb(42, 145, 56);"><a href="{% url 'edit' student.id %}" style="text-decoration: none; color: antiquewhite;">Edit </a></td>
+            <td style="background-color: rgb(182, 69, 25);"><a href="{% url 'delete' student.id %}" style="text-decoration: none; color: antiquewhite;">Delete</a></td>
+        </tr>
+        {%endfor%}
+    </tbody>
+    <tfoot style="font-size: x-large;">
+        <tr>
+            <td> Number of students</td>
+            <td colspan="4" style="text-align: center;">{{students.count}}</td>
+
+        </tr>
+    </tfoot>
+</table>
+
+
+
+
+
+
+
+
+</body>
